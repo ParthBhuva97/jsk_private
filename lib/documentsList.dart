@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jsk_app/documentInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DocumentsList extends StatefulWidget {
   String cName;
@@ -13,10 +14,19 @@ class DocumentsList extends StatefulWidget {
 List<String> subServices = [];
 
 class _DocumentsListState extends State<DocumentsList> {
+  String? name = '';
   @override
   void initState() {
-    super.initState();
+    getName();
     getListitems(widget.cName);
+    super.initState();
+  }
+
+  Future<void> getName() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      name = prefs.getString('username');
+    });
   }
 
   @override
@@ -27,7 +37,7 @@ class _DocumentsListState extends State<DocumentsList> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Hello User!",
+                "Hello ${name}",
                 style: TextStyle(fontSize: 20),
               ),
               Text(
@@ -91,11 +101,12 @@ class _DocumentsListState extends State<DocumentsList> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            DocumentInfo(docName: "$index")));
+                                        builder: (context) => DocumentInfo(
+                                            cName: widget.cName,
+                                            docName: subServices[index])));
                               },
                               child: Card(
-                                elevation: 10,
+                                elevation: 5,
                                 child: Container(
                                   //height: 50,
                                   margin: EdgeInsets.all(10),

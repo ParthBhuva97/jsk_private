@@ -103,14 +103,14 @@ class _SearchDocumentsState extends State<SearchDocuments> {
                               left: 8.0, right: 8.0, top: 5, bottom: 5),
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => DocumentInfo(
-                                          docName: subServices[index])));
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) => DocumentInfo(
+                              //             docName: subServices[index])));
                             },
                             child: Card(
-                              elevation: 10,
+                              elevation: 5,
                               child: Container(
                                 //height: 50,
                                 margin: EdgeInsets.all(10),
