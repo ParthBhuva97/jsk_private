@@ -64,7 +64,7 @@ class _DocumentInfoState extends State<DocumentInfo> {
                     onPressed: () {},
                     child: Text("Apply"),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.amber,
+                      primary: Color.fromRGBO(37, 98, 193, 1),
                     ),
                   )
                 ],

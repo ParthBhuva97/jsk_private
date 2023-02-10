@@ -37,7 +37,7 @@ class _DocumentsListState extends State<DocumentsList> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Hello ${name}",
+                "Hello ${name}!",
                 style: TextStyle(fontSize: 20),
               ),
               Text(
@@ -49,13 +49,13 @@ class _DocumentsListState extends State<DocumentsList> {
           elevation: 0,
           toolbarHeight: 100,
           actions: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: IconButton(
-                icon: Icon(Icons.notifications),
-                onPressed: () {},
-              ),
-            )
+            // Padding(
+            //   padding: const EdgeInsets.all(10.0),
+            //   child: IconButton(
+            //     icon: Icon(Icons.notifications),
+            //     onPressed: () {},
+            //   ),
+            // )
           ],
         ),
         body: SingleChildScrollView(
@@ -84,7 +84,7 @@ class _DocumentsListState extends State<DocumentsList> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
+                  padding: const EdgeInsets.only(top: 40),
                   child: Container(
                     height: 600,
                     color: Colors.white,
